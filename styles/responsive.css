@@ -1,0 +1,121 @@
+@media (max-width: 991.98px) {
+  /* The collapse panel is a flex sibling of the logo/toggler in a
+     `d-flex` row with no wrap, so once it becomes visible it tries to
+     stay in that same row and overlaps the logo instead of dropping
+     below it. Taking it out of flow with position:absolute turns it
+     into the floating panel pattern instead, anchored to the
+     position:relative <nav>. */
+  .site-header .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 1rem;
+    right: 1rem;
+    margin-top: 0.5rem;
+    padding: 1rem 1.25rem 1.25rem;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-hover);
+    z-index: 1045;
+  }
+
+  .site-header .nav-link,
+  .site-header .dropdown-toggle {
+    padding: 0.6rem 0 !important;
+  }
+
+  .site-header .nav-link::after,
+  .site-header .dropdown-toggle::after {
+    left: 0;
+  }
+
+  /* The active-page pointer triangle is designed to sit just above a
+     horizontal desktop nav-link. Stacked vertically in the mobile
+     floating panel, it pokes out above the panel's top edge instead
+     (the underline already marks the active item here). */
+  .site-header .nav-link.active::before,
+  .site-header .dropdown-toggle.active::before {
+    display: none;
+  }
+
+  .dropdown-menu-custom {
+    box-shadow: none;
+    border: none;
+    background-color: var(--color-section-bg);
+    min-width: 100%;
+    margin-top: 0.25rem !important;
+  }
+
+  /* Desktop fades the mega panel via opacity/visibility with display
+     forced to block (see common.css) so the transition can run. On
+     mobile it drops into normal document flow inside the collapsed
+     nav instead of floating, so it must go back to a plain
+     display:none/block toggle — otherwise all 3 panels stay
+     permanently in-flow (just invisible), inflating page height by
+     thousands of pixels even when the mobile menu is closed. */
+  .dropdown-menu-mega {
+    display: none !important;
+    position: static !important;
+    transform: none !important;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transition: none;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none;
+    border: none;
+    background-color: var(--color-section-bg);
+    border-radius: var(--radius-sm);
+  }
+
+  .dropdown-menu-mega.show {
+    display: block !important;
+  }
+
+  .mega-inner {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .mega-promo {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .mega-promo {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-custom {
+    padding: 1.5rem;
+  }
+
+  .testimonial-card {
+    padding: 1.75rem;
+  }
+
+  .page-banner-image {
+    padding-block: 1.75rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    width: 100%;
+  }
+
+  .hero-actions .btn-primary-custom,
+  .hero-actions .btn-secondary-custom {
+    width: auto;
+  }
+}

@@ -1,0 +1,1439 @@
+html {
+  scroll-behavior: smooth;
+  /* Nearly every heading/title/spacing rule in this file is sized in rem,
+     which resolves against THIS root font-size, not body's — reducing
+     body's font-size alone left every rem-based title (e.g. .section-title)
+     unchanged, which is why titles kept looking oversized. */
+  font-size: 15px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* Layout helpers */
+.container-custom {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+/* Shared class for compact "connector" sections with no heading of their own
+   (e.g. a strip of stat cards between two full sections) — keeps spacing
+   consistent instead of ad-hoc per-section overrides. */
+.section-tight {
+  padding-block: var(--space-section-tight);
+}
+
+@media (max-width: 767.98px) {
+  .section,
+  .section-tight {
+    padding-block: var(--space-section-sm);
+  }
+}
+
+.section-bg-alt {
+  background-color: var(--color-section-bg);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.9rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  max-width: 720px;
+}
+
+.text-light-custom {
+  color: var(--color-text-light);
+}
+
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.text-success-custom {
+  color: var(--color-success) !important;
+}
+
+.text-primary-custom {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary-custom {
+  color: var(--color-secondary) !important;
+}
+
+.text-teal-custom {
+  color: var(--color-teal) !important;
+}
+
+.text-rose-custom {
+  color: var(--color-rose) !important;
+}
+
+.bg-primary-custom {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)) !important;
+}
+
+.bg-secondary-custom {
+  background: linear-gradient(135deg, var(--color-ink), var(--color-secondary)) !important;
+}
+
+/* Buttons */
+.btn-primary-custom,
+.btn-secondary-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-primary-custom {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary-custom:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  color: var(--color-white);
+}
+
+.btn-secondary-custom {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary-custom:hover {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-color: transparent;
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* White pill on dark backgrounds (e.g. the navy CTA band) — a blue button
+   on a blue/navy background would have almost no contrast, so this uses
+   white instead of the (removed) gold accent to stay visible there. */
+.btn-accent-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-accent-custom:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
+  color: var(--color-primary-dark);
+}
+
+/* Contact CTA band */
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-section);
+  background: linear-gradient(135deg, #071c42, #0b3c91 60%, #1e5eff);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cta-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.16) 1.5px, transparent 1.5px);
+  background-size: 26px 26px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.cta-band .eyebrow {
+  color: var(--color-accent);
+}
+
+.cta-band-title {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.cta-band-subtitle {
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 560px;
+  margin-bottom: 0;
+}
+
+.cta-band-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-sm);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.cta-band-contact:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: var(--color-white);
+}
+
+.btn-sm-custom {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.875rem;
+}
+
+/* Cards */
+.card-custom {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  height: 100%;
+}
+
+.card-compact {
+  padding: 1.1rem 1.25rem;
+}
+
+.card-compact .icon-badge {
+  width: 40px;
+  height: 40px;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-compact .icon-card-underline {
+  margin-bottom: 0.5rem;
+  /* card-compact shrinks the icon-badge to 40px, so re-center for that width */
+  margin-left: 4px;
+}
+
+.card-compact .icon-card-ribbon {
+  width: 40px;
+  height: 40px;
+}
+
+.card-compact .icon-card-ribbon-number {
+  top: 5px;
+  right: 4px;
+  font-size: 0.7rem;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: transparent;
+}
+
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 1.15rem;
+  margin-bottom: 0.85rem;
+  flex-shrink: 0;
+}
+
+.icon-badge-primary {
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-primary);
+}
+
+.icon-badge-secondary {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: var(--color-secondary);
+}
+
+.icon-badge-accent {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+}
+
+.icon-badge-success {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: var(--color-success);
+}
+
+.icon-badge-teal {
+  background-color: rgba(13, 148, 136, 0.1);
+  color: var(--color-teal);
+}
+
+.icon-badge-rose {
+  background-color: rgba(225, 29, 72, 0.1);
+  color: var(--color-rose);
+}
+
+.icon-badge-indigo {
+  background-color: rgba(47, 75, 158, 0.1);
+  color: var(--color-indigo);
+}
+
+.icon-badge-violet {
+  background-color: rgba(147, 51, 234, 0.1);
+  color: var(--color-violet);
+}
+
+/* Tone custom-property classes — drive the ribbon/underline/border/link color
+   on the numbered icon-card variant below. */
+.tone-primary { --tone-color: var(--color-primary); }
+.tone-secondary { --tone-color: var(--color-secondary); }
+.tone-accent { --tone-color: var(--color-accent); }
+.tone-success { --tone-color: var(--color-success); }
+.tone-teal { --tone-color: var(--color-teal); }
+.tone-rose { --tone-color: var(--color-rose); }
+.tone-indigo { --tone-color: var(--color-indigo); }
+.tone-violet { --tone-color: var(--color-violet); }
+
+/* Numbered icon card (corner ribbon + underline + tone bottom border) */
+.icon-card {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--tone-color, var(--color-accent));
+}
+
+.icon-card-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--tone-color, var(--color-accent));
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.icon-card-ribbon-number {
+  position: absolute;
+  top: 6px;
+  right: 5px;
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.7rem;
+  font-family: var(--font-family);
+}
+
+.icon-card-head {
+  margin-bottom: 0.85rem;
+}
+
+.icon-card-underline {
+  width: 32px;
+  height: 3px;
+  /* centers the 32px line under the 44px icon-badge above it */
+  margin-left: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--tone-color, var(--color-accent));
+  margin-bottom: 0.85rem;
+}
+
+.icon-card h3 {
+  margin-top: 0;
+}
+
+.icon-card-readmore {
+  color: var(--tone-color, var(--color-accent));
+  font-weight: 600;
+}
+
+.icon-card-readmore:hover {
+  color: var(--tone-color, var(--color-accent));
+  opacity: 0.8;
+}
+
+/* Scroll-triggered reveals — ScrollReveal.tsx adds .is-visible via
+   IntersectionObserver when an element scrolls into view. Elements above
+   the fold at load are observed too, so they still animate in on first
+   paint; nothing below the fold is stranded pre-animated at opacity:0. */
+.fade-up,
+.fade-in {
+  opacity: 0;
+}
+
+.fade-up {
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in {
+  transition: opacity 0.6s ease;
+}
+
+.fade-up.is-visible,
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+/* Staggered grid reveal — put .stagger-fade on the row/grid wrapper;
+   ScrollReveal.tsx adds .is-visible to the wrapper itself and each direct
+   child fades up in sequence via nth-child transition-delay. */
+.stagger-fade > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-fade.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-fade.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+.stagger-fade.is-visible > *:nth-child(2) { transition-delay: 60ms; }
+.stagger-fade.is-visible > *:nth-child(3) { transition-delay: 120ms; }
+.stagger-fade.is-visible > *:nth-child(4) { transition-delay: 180ms; }
+.stagger-fade.is-visible > *:nth-child(5) { transition-delay: 240ms; }
+.stagger-fade.is-visible > *:nth-child(6) { transition-delay: 300ms; }
+.stagger-fade.is-visible > *:nth-child(n+7) { transition-delay: 340ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up,
+  .fade-in,
+  .stagger-fade > * {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hover-lift:hover {
+    transform: none !important;
+  }
+
+  .dropdown-menu-mega {
+    transition: none !important;
+  }
+}
+
+/* Sticky header */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 0 rgba(30, 41, 59, 0.02);
+}
+
+/* Header is taken out of normal flow by position:fixed above, so page
+   content needs an equal top offset or it renders underneath the header. */
+main {
+  padding-top: var(--header-height, 92px);
+}
+
+@media (max-width: 991.98px) {
+  main {
+    padding-top: var(--header-height-mobile, 76px);
+  }
+}
+
+.site-header .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.site-header .nav-link,
+.site-header .dropdown-toggle {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.6rem 1.15rem !important;
+  position: relative;
+  background: none;
+  border: none;
+}
+
+.site-header .nav-link::after,
+.site-header .dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0.25rem;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.site-header .dropdown-toggle::after {
+  left: 1rem;
+  right: 2.1rem;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link.active,
+.site-header .dropdown-toggle:hover,
+.site-header .dropdown-toggle.active {
+  color: var(--color-primary);
+}
+
+.site-header .nav-link:hover::after,
+.site-header .nav-link.active::after,
+.site-header .dropdown-toggle:hover::after,
+.site-header .dropdown-toggle.active::after {
+  transform: scaleX(1);
+}
+
+.site-header .nav-link.active::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-primary);
+}
+
+.site-header .dropdown-toggle::before {
+  content: "\F282";
+  font-family: "bootstrap-icons";
+  font-size: 0.65rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  display: inline-block;
+  order: 2;
+  transition: transform 0.2s ease;
+}
+
+.site-header .dropdown.show .dropdown-toggle::before {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu-custom {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-hover);
+  padding: 0.5rem;
+  min-width: 280px;
+  margin-top: 0.5rem !important;
+}
+
+.dropdown-item-custom {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+}
+
+.dropdown-item-custom:hover {
+  background-color: rgba(37, 99, 235, 0.06);
+  color: var(--color-primary);
+}
+
+.dropdown-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: rgba(37, 99, 235, 0.1);
+  color: var(--color-primary);
+}
+
+/* Mega menu is centered via left:50% below, resolved against the nearest
+   positioned ancestor. Bootstrap's default `.dropdown { position: relative }`
+   would make that ancestor the individual <li>, so a wide (920px) panel
+   centers under whichever toggle opened it — fine for "What We Do" near
+   the left, but "Company" (the rightmost nav item) then centers a 920px
+   panel around a point ~700-900px in, pushing it far past the viewport's
+   right edge at any width under ~1300px. Centering on the <nav> itself
+   (position-relative, spans the full header width) keeps it within
+   bounds regardless of which item triggered it. */
+.site-header .nav-item.dropdown {
+  position: static;
+}
+
+/* The "More" trigger sits near the right edge of the nav, so centering its
+   panel on the whole <nav> (the default above) drifts it left, under the
+   preceding nav item instead of under "More" itself. Anchoring it to its
+   own <li> instead keeps the panel under the item that actually opened it. */
+.site-header .nav-item.dropdown-more {
+  position: relative;
+}
+
+.dropdown-more .dropdown-menu-mega {
+  left: auto !important;
+  right: 0 !important;
+  transform: translateY(8px) !important;
+}
+
+.dropdown-more .dropdown-menu-mega.show {
+  transform: translateY(0) !important;
+}
+
+.dropdown-menu-mega {
+  display: block !important;
+  position: absolute !important;
+  top: calc(100% + 0.75rem) !important;
+  left: 50% !important;
+  right: auto !important;
+  width: fit-content(1000px);
+  max-width: calc(100vw - 2.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-hover);
+  padding: 0;
+  margin: 0 !important;
+  background-color: var(--color-white);
+  z-index: 1040;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.dropdown-menu-mega.show {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Flexbox instead of CSS Grid here deliberately: a grid track defined with
+   a definite max (e.g. minmax(230px, 260px)) always reserves that max width
+   for the grid's intrinsic sizing, even when the actual content (one short
+   link column vs. two) is much narrower — that reserved-but-unused space is
+   exactly what produced the dead gap before the promo box. Flex items size
+   to their own content by default, so 1 column, 2 columns, or 2 columns of
+   different lengths all pack tightly with no leftover track space. */
+.mega-inner {
+  padding: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.75rem;
+}
+
+.mega-col {
+  min-width: 230px;
+  flex-shrink: 0;
+}
+
+.mega-columns {
+  display: contents;
+}
+
+.mega-col-heading {
+  display: block;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-light);
+  margin-bottom: 0.85rem;
+}
+
+.mega-promo {
+  width: 260px;
+  flex-shrink: 0;
+  margin-left: auto;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  background: linear-gradient(150deg, rgba(11, 60, 145, 0.08), rgba(212, 160, 23, 0.1));
+  border: 1px solid var(--color-border);
+}
+
+.mega-promo-badge {
+  display: block;
+  width: fit-content;
+  font-family: var(--font-family);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-dark));
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.mega-promo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.mega-promo h3 {
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.mega-promo p {
+  color: var(--color-text-light);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.mega-promo-cta {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.mega-promo-cta:hover {
+  color: var(--color-secondary);
+}
+
+/* Footer */
+.site-footer {
+  background-color: #050f26;
+  border-top: 3px solid var(--color-primary);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.site-footer a:hover {
+  color: var(--color-accent);
+}
+
+.site-footer h6 {
+  font-family: var(--font-family);
+  color: var(--color-white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+/* Page banner (legacy flat style, unused but kept for reference) */
+.page-banner {
+  background-color: var(--color-section-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 3rem;
+}
+
+/* Tone gradients — earthy sand & clay overlay on top of a real photo */
+.page-banner-tone-primary {
+  background: linear-gradient(120deg, rgba(7, 28, 66, 0.94), rgba(11, 60, 145, 0.88));
+}
+
+.page-banner-tone-secondary {
+  background: linear-gradient(120deg, rgba(11, 60, 145, 0.93), rgba(30, 94, 255, 0.85));
+}
+
+.page-banner-tone-success {
+  background: linear-gradient(120deg, rgba(7, 28, 66, 0.93), rgba(212, 160, 23, 0.78));
+}
+
+.page-banner-image-photo,
+.hero-slide-image {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.page-banner-overlay,
+.hero-slide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.page-banner-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.18) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.page-banner-icon {
+  position: absolute;
+  z-index: 1;
+  right: -2rem;
+  bottom: -2rem;
+  font-size: 12rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+
+.page-banner-image > .container-custom,
+.hero-slide-inner,
+.stats-section-photo > .container-custom {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow-inverted {
+  display: inline-block;
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.9rem;
+}
+
+/* Image-style page banner (all inner pages) */
+.page-banner-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  min-height: var(--page-banner-height);
+  padding-block: 2.5rem;
+  color: var(--color-white);
+}
+
+.page-banner-title {
+  font-family: var(--font-display);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  margin-bottom: 0.5rem;
+}
+
+.page-banner-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+}
+
+/* Hero slider (home page) — self-contained React slider, no Bootstrap
+   Carousel JS. Bootstrap's Carousel instance lifecycle doesn't play well
+   with Next.js client-side navigation (unmount/remount on route change
+   can leave a stale auto-advance interval running against a disposed
+   instance, throwing "Illegal invocation" / "Cannot read properties of
+   null"), so slide state, autoplay, and controls are all plain React. */
+.hero-slider {
+  position: relative;
+}
+
+.hero-slider-viewport {
+  position: relative;
+  min-height: var(--banner-height);
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  min-height: var(--banner-height);
+  color: var(--color-white);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+  z-index: 0;
+}
+
+.hero-slide-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero-slide-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  line-height: 1.18;
+  margin-bottom: 1.25rem;
+  min-height: calc(1.18em * 2);
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-slide-subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  font-size: 1.08rem;
+  margin-bottom: 2.25rem;
+  min-height: calc(1.5em * 3);
+}
+
+.hero-slide-inner {
+  padding-inline: 3.5rem;
+  padding-block: 3.5rem 6.5rem;
+}
+
+@media (max-width: 767.98px) {
+  .hero-slide-inner {
+    padding-inline: 1.25rem;
+    padding-block: 2rem 4rem;
+  }
+
+  .hero-slider-control {
+    width: 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+.hero-slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-white);
+  opacity: 0.75;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.hero-slider-control:hover {
+  opacity: 1;
+}
+
+.hero-slider-control-prev {
+  left: 0;
+}
+
+.hero-slider-control-next {
+  right: 0;
+}
+
+.hero-slider-indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+}
+
+.hero-slider-indicators button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  margin-inline: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+.hero-slider-indicators button.active {
+  background-color: var(--color-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+}
+
+/* Accordion (FAQ) — numbered, tone-accented */
+.accordion-custom .accordion-item {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--tone-color, var(--color-accent));
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  transition: box-shadow 0.2s ease;
+}
+
+.accordion-custom .accordion-item:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+.accordion-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--tone-color, var(--color-accent));
+  background-color: var(--color-section-bg);
+}
+
+.accordion-custom .accordion-button {
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--color-ink);
+  background-color: var(--color-white);
+  border-radius: 0 !important;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.accordion-custom .accordion-button:not(.collapsed) {
+  color: var(--tone-color, var(--color-accent));
+  background-color: var(--color-section-bg);
+  box-shadow: none;
+}
+
+.accordion-custom .accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--color-border);
+}
+
+.accordion-custom .accordion-body {
+  border-top: 1px solid var(--color-border);
+}
+
+/* FAQ support CTA card */
+.faq-cta {
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  background: linear-gradient(150deg, var(--color-primary), var(--color-secondary));
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-soft);
+}
+
+.faq-cta-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.16);
+  color: var(--color-white);
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.faq-cta-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--color-white);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 2px;
+}
+
+.faq-cta-link:hover {
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+/* Stat counter */
+.stat-counter {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-counters-inverted .stat-counter {
+  background: linear-gradient(135deg, #ffffff, var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stats-counters-inverted p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.stats-section-photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section-photo-img {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.stats-section-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(120deg, rgba(46, 36, 32, 0.93), rgba(122, 75, 50, 0.88));
+}
+
+/* Curved section divider */
+.section-curve {
+  position: relative;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.section-curve svg {
+  display: block;
+  width: 100%;
+  height: 56px;
+}
+
+.section-curve-flip svg {
+  transform: scaleY(-1);
+}
+
+.site-image-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rounded image frame with hover-to-zoom, used wherever a photo appears */
+.img-zoom {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.img-zoom.img-zoom-circle {
+  border-radius: 50%;
+}
+
+.img-zoom .site-image-fill,
+.img-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-zoom:hover .site-image-fill,
+.img-zoom:hover img {
+  transform: scale(1.08);
+}
+
+.page-banner-curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 2;
+}
+
+/* Testimonial */
+.testimonial-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Sliding testimonial track: shows 3 cards on desktop, scrolls to reveal more */
+.testimonial-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+}
+
+.testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-slide {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  scroll-snap-align: start;
+}
+
+@media (max-width: 991.98px) {
+  .testimonial-slide {
+    flex-basis: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .testimonial-slide {
+    flex-basis: 88%;
+  }
+}
+
+/* Badge */
+.badge-custom {
+  display: inline-block;
+  font-family: var(--font-family);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.12));
+  color: var(--color-secondary);
+}
+
+/* Numbered editorial list (Why Choose Us / Process) */
+.numbered-row {
+  display: flex;
+  gap: 1.75rem;
+  padding-block: 1.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.numbered-row:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.numbered-row-index {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  flex-shrink: 0;
+  width: 3rem;
+}
+
+/* Floating scroll-to-top button */
+.scroll-top-btn {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 5.75rem;
+  z-index: 1050;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  box-shadow: var(--shadow-hover);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+}
+
+.scroll-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Floating chat widget */
+.chat-widget {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 1050;
+}
+
+.chat-widget-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  box-shadow: var(--shadow-hover);
+}
+
+.chat-widget-toggle:hover {
+  transform: translateY(-3px);
+}
+
+.chat-widget-panel {
+  position: absolute;
+  right: 0;
+  bottom: 4.5rem;
+  width: min(320px, calc(100vw - 3rem));
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--color-border);
+}
+
+.chat-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.chat-widget-header button {
+  border: none;
+  background: none;
+  color: var(--color-white);
+  font-size: 0.9rem;
+}
+
+.chat-widget-body {
+  padding: 1.25rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.chat-widget-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0;
+  color: var(--color-text);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.chat-widget-link:last-of-type {
+  border-bottom: none;
+}
+
+@media (max-width: 575.98px) {
+  .chat-widget,
+  .scroll-top-btn {
+    right: 1rem;
+  }
+
+  .scroll-top-btn {
+    bottom: 5.25rem;
+  }
+}

@@ -1,0 +1,47 @@
+:root {
+  /* Colors — premium corporate: royal blue on white, no gold/yellow anywhere */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-section-bg: #f8fafc;
+  --color-ink: #1a1a1a;
+  --color-text: #1a1a1a;
+  --color-text-light: #5b6472;
+  --color-border: #e2e8f0;
+
+  --color-primary: #1e5eff;
+  --color-primary-dark: #0b3c91;
+  --color-secondary: #0b3c91;
+  --color-accent: #38bdf8;
+  --color-accent-soft: rgba(56, 189, 248, 0.12);
+  --color-success: #16a34a;
+  --color-teal: #0d9488;
+  --color-rose: #e11d48;
+  --color-indigo: #0b3c91;
+  --color-violet: #1e5eff;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-family: var(--font-roboto), "Segoe UI", Arial, sans-serif;
+  --font-display: var(--font-roboto), "Segoe UI", Arial, sans-serif;
+
+  /* Radii — friendly, rounded */
+  --radius-sm: 10px;
+  --radius-card: 18px;
+  --radius-pill: 999px;
+
+  /* Shadows — visible, soft-glossy */
+  --shadow-soft: 0 6px 20px rgba(30, 41, 59, 0.07);
+  --shadow-hover: 0 16px 36px rgba(30, 41, 59, 0.14);
+
+  /* Layout */
+  --max-width: 1320px;
+
+  /* Spacing */
+  --space-section: 4.5rem;
+  --space-section-sm: 2.75rem;
+  --space-section-tight: 2.25rem;
+
+  /* Banner heights: page banners are derived from the home slider height */
+  --banner-height: clamp(420px, 46vw, 560px);
+  --page-banner-height: clamp(240px, 26vw, 320px);
+}
