@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: `"HRD Website" <${SMTP_USER}>`,
+      from: `"KMAS Website" <${SMTP_USER}>`,
       to: CONTACT_TO_EMAIL,
       replyTo: email,
       subject: `[Website Contact] ${subject}`,
