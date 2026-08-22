@@ -1,8 +1,6 @@
-// Single confident accent across the icon-card system instead of cycling
-// through all 8 tones — the color no longer needs to communicate anything
-// (order, category), so one consistent hue reads as a considered brand
-// choice rather than decoration.
-export const TONE_CYCLE = ["primary"] as const;
+// Alternating primary/accent across the icon-card system — mirrors the
+// KMAS logo's own two-tone navy + green identity instead of one flat hue.
+export const TONE_CYCLE = ["primary", "accent"] as const;
 
 export type Tone = (typeof TONE_CYCLE)[number];
 

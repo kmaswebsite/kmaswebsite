@@ -262,7 +262,7 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
   padding: 1.5rem;
-  box-shadow: var(--shadow-soft);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   height: 100%;
 }
@@ -520,6 +520,11 @@ main {
   color: var(--color-ink);
   font-size: 1.3rem;
   letter-spacing: -0.01em;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
 }
 
 .brand-mark {
@@ -984,6 +989,18 @@ main {
     padding-block: 2rem 4rem;
   }
 
+  /* The fixed --banner-height (min 420px) is enough on desktop, but the
+     longest slide's eyebrow + title + subtitle + buttons don't fit in
+     420px once wrapped to the narrow mobile width — since the slide is
+     bottom-anchored (align-items: flex-end) with overflow: hidden, the
+     overflow clips off the TOP of the heading instead of just looking
+     tight. Give mobile enough room to fit the longest slide's content
+     without clipping. */
+  .hero-slider-viewport,
+  .hero-slide {
+    min-height: 640px;
+  }
+
   .hero-slider-control {
     width: 2rem;
     font-size: 1.1rem;
@@ -1303,7 +1320,11 @@ main {
   border-top: 1px solid var(--color-border);
 }
 
-.numbered-row:last-child {
+/* :last-child alone only closes the very last DOM item; in a 2-per-row
+   grid (WhyChooseUs) that leaves the other column of the final row with
+   no bottom border at all. :nth-last-child(-n+2) closes both columns of
+   the final row, and still matches a lone single-column usage (about-hrd). */
+.numbered-row:nth-last-child(-n+2) {
   border-bottom: 1px solid var(--color-border);
 }
 

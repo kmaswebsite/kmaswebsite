@@ -22,7 +22,7 @@ export default function LeadershipPage() {
         image="/images/banner-people.jpg"
       />
 
-      <section className="section">
+      <section className="section" style={{ paddingBottom: "1.5rem" }}>
         <div className="container-custom">
           <div className="row gy-5 align-items-start">
             <div className="col-lg-5 fade-up">
@@ -63,7 +63,7 @@ export default function LeadershipPage() {
 
       <SectionCurve fill="var(--color-section-bg)" />
 
-      <section className="section section-bg-alt">
+      <section className="section section-bg-alt" style={{ paddingTop: "1.5rem" }}>
         <div className="container-custom">
           <div className="row g-4 stagger-fade">
             <div className="col-md-6">

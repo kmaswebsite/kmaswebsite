@@ -37,9 +37,9 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     name: "Krishna's Management Advisory & Services (KMAS)",
     shortName: "KMAS",
     tagline: "To help customers achieve their business objectives by providing innovative, best-in-class consulting, solutions management advisory and services.",
-    phone: "+91 422 435 6789",
-    email: "hello@hrd-consulting.com",
-    address: "3rd Floor, Prozone Business Hub, Trichy Road, Coimbatore, Tamil Nadu 641018",
+    phone: "+91 99401 99834",
+    email: "admin@k-mas.com",
+    address: "Sree Aishwaryam Apartments, 1A 3D, Ground Floor, Dr. Ambedkar Road, Bhuvaneshwari Nagar, Venkitapuram, Coimbatore - 641 025",
     hours: "Mon – Fri: 9:30 AM – 6:30 PM (IST)",
   },
   social: {

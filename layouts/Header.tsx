@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -66,11 +67,8 @@ export default function Header() {
     <header className="site-header">
       <nav className="navbar navbar-expand-lg py-3 position-relative">
         <div className="container-custom d-flex align-items-center justify-content-between">
-          <Link href="/" className="navbar-brand d-flex align-items-center gap-2 me-4">
-            <span className="brand-mark">
-              <i className="bi bi-diagram-3-fill" aria-hidden="true" />
-            </span>
-            KMAS
+          <Link href="/" className="navbar-brand d-flex align-items-center me-4">
+            <Image src="/images/logo-kmas.png" alt="KMAS" width={132} height={66} className="brand-logo" priority />
           </Link>
 
           <button

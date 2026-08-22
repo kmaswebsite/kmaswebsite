@@ -4,6 +4,7 @@ export type ServiceItem = {
   title: string;
   description: string;
   detail: string;
+  underConstruction?: boolean;
 };
 
 export const serviceItems: ServiceItem[] = [
@@ -28,6 +29,7 @@ export const serviceItems: ServiceItem[] = [
     description: "Hiring, salary fixation, fitting Job Descriptions, appointment orders, induction training/orientation, Learning & Development, Performance Management, and more.",
     detail:
       "Hiring, salary fixation, fitting Job Descriptions, appointment orders, induction training/orientation, Learning & Development, Performance Management, coaching & mentoring for senior positions, blue-colour employees handling, compliances management, Union/Representation body management, Long term Settlements, Disputes handling, disciplining, rewards & recognitions based on goals (set objectives) achievement, attrition and redundancy management are broadly the areas that KMAS shall handle deftly.",
+    underConstruction: true,
   },
   {
     slug: "hr-audit",
