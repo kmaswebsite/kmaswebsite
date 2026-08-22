@@ -27,7 +27,7 @@ export default function LeadershipPage() {
           <div className="row gy-5 align-items-start">
             <div className="col-lg-5 fade-up">
               <div className="position-relative img-zoom mb-3" style={{ aspectRatio: "3 / 4" }}>
-                <SiteImage path="/images/trainer-1.jpg" alt={kmasLeader.name} />
+                <SiteImage path="/images/ramakrishnan-mohan.jpg" alt={kmasLeader.name} />
               </div>
               <h2 className="h4 mb-1">{kmasLeader.name}</h2>
               <p className="text-light-custom fw-semibold">{kmasLeader.title}</p>

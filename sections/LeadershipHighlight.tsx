@@ -9,7 +9,7 @@ export default function LeadershipHighlight() {
         <div className="row align-items-center gy-5">
           <div className="col-lg-5 fade-up">
             <div className="position-relative img-zoom" style={{ aspectRatio: "4 / 5", maxWidth: 420 }}>
-              <SiteImage path="/images/trainer-1.jpg" alt={kmasLeader.name} />
+              <SiteImage path="/images/ramakrishnan-mohan.jpg" alt={kmasLeader.name} />
             </div>
           </div>
 
