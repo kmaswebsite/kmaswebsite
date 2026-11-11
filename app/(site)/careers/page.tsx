@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import UnderConstruction from "@/components/ui/UnderConstruction";
+import CareersContent from "@/components/careers/CareersContent";
 
 export const metadata: Metadata = {
   title: "Careers",
+  description: "Work with Krishna's Management Advisory & Services (KMAS).",
 };
 
 export default function CareersPage() {
-  return <UnderConstruction />;
+  return <CareersContent />;
 }

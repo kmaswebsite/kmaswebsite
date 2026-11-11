@@ -6,34 +6,34 @@ export type CourseCategory = {
 
 export const courseCategories: CourseCategory[] = [
   {
-    icon: "bi bi-building",
-    title: "Corporate Learning",
-    description: "Enterprise-wide learning journeys tied to business priorities and culture goals.",
-  },
-  {
-    icon: "bi bi-cpu",
-    title: "Technical Training",
-    description: "Role-specific technical upskilling across tools, platforms, and systems.",
-  },
-  {
-    icon: "bi bi-emoji-smile",
-    title: "Soft Skills",
-    description: "Communication, collaboration, and emotional intelligence programs for every level.",
-  },
-  {
     icon: "bi bi-award",
-    title: "Leadership Programs",
-    description: "Multi-month leadership tracks combining workshops, coaching, and action learning.",
+    title: "Leadership & Management",
+    description: "Training, mentoring and coaching middle and senior management to become ‘Change Agents’.",
+  },
+  {
+    icon: "bi bi-lightbulb",
+    title: "Soft Skills & Competency",
+    description: "Customised soft-skills and competency enhancement for high-performance employees.",
+  },
+  {
+    icon: "bi bi-person-gear",
+    title: "Supervisory Development",
+    description: "Equipping supervisors and first-line managers to lead shop-floor and frontline teams.",
   },
   {
     icon: "bi bi-shield-check",
-    title: "Compliance Training",
-    description: "Mandatory regulatory and policy training with completion tracking built in.",
+    title: "Compliance & Discipline",
+    description: "Awareness of labour laws, discipline management and fair HR practices for managers.",
   },
   {
-    icon: "bi bi-patch-check",
-    title: "Certification Programs",
-    description: "Assessment-backed certification tracks recognized across partner industries.",
+    icon: "bi bi-door-open",
+    title: "Induction & Orientation",
+    description: "Structured onboarding that connects new employees to the organisation from day one.",
+  },
+  {
+    icon: "bi bi-mortarboard",
+    title: "Future-Ready Programs",
+    description: "Customised intervention programs for young minds in schools and colleges.",
   },
 ];
 
@@ -48,58 +48,58 @@ export type FeaturedProgram = {
 
 export const featuredPrograms: FeaturedProgram[] = [
   {
-    title: "Strategic HR Business Partnering",
-    category: "Corporate Learning",
-    level: "Intermediate",
-    format: "Hybrid",
-    duration: "3 Days",
+    title: "Developing Change Agents",
+    category: "Leadership & Management",
+    level: "Middle & Senior Management",
+    format: "Workshop + Coaching",
+    duration: "Customised",
     description:
-      "Equips HR professionals to operate as strategic partners to business leaders, covering workforce analytics, stakeholder influence, and change leadership.",
+      "Builds the mindset and skills managers need to lead change, engage their teams and sustain new initiatives.",
   },
   {
-    title: "Data-Driven People Analytics",
-    category: "Technical Training",
-    level: "Intermediate",
-    format: "Online",
-    duration: "2 Days",
+    title: "Effective People Management",
+    category: "Leadership & Management",
+    level: "First-line & Middle Managers",
+    format: "Workshop",
+    duration: "Customised",
     description:
-      "Hands-on training in building HR dashboards, interpreting attrition and engagement data, and presenting insights to leadership.",
+      "Goal setting, feedback, performance conversations and motivating teams for better business results.",
   },
   {
-    title: "High-Impact Communication",
-    category: "Soft Skills",
-    level: "Beginner",
-    format: "In-Person",
-    duration: "1 Day",
+    title: "Supervisory Excellence",
+    category: "Supervisory Development",
+    level: "Supervisors",
+    format: "Workshop",
+    duration: "Customised",
     description:
-      "Practical techniques for clear, confident communication in meetings, presentations, and cross-functional collaboration.",
+      "Handling blue-collar teams, shop-floor discipline, communication and building a high-performance culture.",
   },
   {
-    title: "Future-Ready Leadership Accelerator",
-    category: "Leadership Programs",
-    level: "Advanced",
-    format: "Hybrid",
-    duration: "12 Weeks",
+    title: "Discipline & Labour Law Awareness",
+    category: "Compliance & Discipline",
+    level: "Managers & HR Teams",
+    format: "Workshop",
+    duration: "Customised",
     description:
-      "A cohort-based leadership program combining executive coaching, 360 feedback, and a live business action-learning project.",
+      "Practical understanding of discipline management, domestic enquiries and statutory responsibilities.",
   },
   {
-    title: "Workplace Safety & Compliance Essentials",
-    category: "Compliance Training",
-    level: "Beginner",
-    format: "Online",
-    duration: "Half Day",
+    title: "Communication & Interpersonal Effectiveness",
+    category: "Soft Skills & Competency",
+    level: "All Employees",
+    format: "Workshop",
+    duration: "Customised",
     description:
-      "Core compliance training covering workplace safety, anti-harassment policy, and regulatory reporting obligations.",
+      "Clear communication, teamwork and collaboration, delivered using proven tools with specialised interpretations.",
   },
   {
-    title: "Certified Talent Acquisition Professional",
-    category: "Certification Programs",
-    level: "Intermediate",
-    format: "Hybrid",
-    duration: "4 Weeks",
+    title: "Campus to Corporate",
+    category: "Future-Ready Programs",
+    level: "Students",
+    format: "Interactive Sessions",
+    duration: "Customised",
     description:
-      "An assessment-backed certification covering full-cycle recruitment, structured interviewing, and employer branding.",
+      "Prepares students for the world of work — attitude, communication, workplace etiquette and interview readiness.",
   },
 ];
 
@@ -109,20 +109,21 @@ export type TrainerHighlight = {
   expertise: string;
 };
 
+// The KMAS team who lead programs (see lib/content/kmas.ts profiles).
 export const trainerHighlights: TrainerHighlight[] = [
   {
-    name: "Dr. Alina Ferreira",
-    title: "Lead Facilitator, Leadership Programs",
-    expertise: "Executive coaching, organizational psychology, 20+ years in leadership development.",
+    name: "Ramakrishnan Mohan",
+    title: "Director & Managing Partner",
+    expertise: "Training, mentoring and coaching middle and senior management; assessor and trainer up to leadership levels.",
   },
   {
-    name: "Marcus Chen",
-    title: "Senior Trainer, Technical & Analytics",
-    expertise: "People analytics, HRIS systems, and data visualization for HR teams.",
+    name: "Karthik Viswanathan",
+    title: "Senior Consultant",
+    expertise: "Sales academies, LMS-based learning ecosystems, coaching leadership teams and capability building.",
   },
   {
-    name: "Priya Nathan",
-    title: "Principal Trainer, Compliance & Policy",
-    expertise: "Labor law, workplace compliance frameworks, and regulatory training design.",
+    name: "Mr. V. Balasundaram",
+    title: "Principal Consultant – Operations & Compliance",
+    expertise: "Statutory compliance, industrial relations, discipline and HR policy implementation.",
   },
 ];

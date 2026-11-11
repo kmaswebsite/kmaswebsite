@@ -16,7 +16,7 @@ export default function SolutionsGrid({ limit, showHeader = true }: SolutionsGri
   const items = limit ? solutionItems.slice(0, limit) : solutionItems;
 
   return (
-    <section className="section section-bg-alt">
+    <section className={`section ${showHeader ? "section-bg-alt" : "pt-0"}`}>
       <div className="container-custom">
         {showHeader && (
           <SectionHeader

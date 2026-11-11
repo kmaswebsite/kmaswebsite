@@ -16,7 +16,7 @@ export default function StrategyGrid({ limit, showHeader = true }: StrategyGridP
   const items = limit ? strategyItems.slice(0, limit) : strategyItems;
 
   return (
-    <section className="section">
+    <section className={`section ${showHeader ? "" : "pt-0"}`}>
       <div className="container-custom">
         {showHeader && (
           <SectionHeader

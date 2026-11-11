@@ -4,79 +4,162 @@ export type StrategyItem = {
   title: string;
   description: string;
   detail: string;
+  highlights?: string[];
+  approach?: string[];
+  outcomes?: string[];
 };
 
+// KMAS strategic advisory — strategic and operational advice on
+// result-oriented business development through people performance.
 export const strategyItems: StrategyItem[] = [
   {
-    slug: "hr-strategy",
-    icon: "bi bi-diagram-3",
-    title: "HR Strategy",
-    description:
-      "Aligning your people function with business objectives through a clear, board-ready HR roadmap.",
-    detail:
-      "We work with executive teams to translate business strategy into a workforce agenda — operating model, capability priorities, and a phased roadmap that HR leadership can execute against with measurable milestones.",
-  },
-  {
-    slug: "talent-strategy",
-    icon: "bi bi-people",
-    title: "Talent Strategy",
-    description:
-      "Building the sourcing, development, and retention architecture that keeps your critical roles filled.",
-    detail:
-      "From talent segmentation to build-vs-buy decisions, we design a talent strategy that identifies critical roles, closes capability gaps, and creates a sustainable pipeline across the organization.",
-  },
-  {
-    slug: "leadership-strategy",
-    icon: "bi bi-award",
-    title: "Leadership Strategy",
-    description:
-      "Defining the leadership behaviors, bench strength, and development pathways your organization needs next.",
-    detail:
-      "We assess current leadership bench strength against future business needs and design targeted development pathways, competency frameworks, and succession-ready leadership pipelines.",
-  },
-  {
-    slug: "performance-strategy",
+    slug: "people-performance-strategy",
     icon: "bi bi-graph-up-arrow",
-    title: "Performance Strategy",
-    description:
-      "Designing performance frameworks that connect individual contribution to organizational outcomes.",
+    title: "People Performance Strategy",
+    description: "Result-oriented business development through people performance initiatives.",
     detail:
-      "We redesign performance management from goal-setting through calibration — building frameworks that are fair, motivating, and directly tied to strategic outcomes rather than administrative box-checking.",
+      "KMAS offers strategic and operational advice on result-oriented business development through people performance initiatives, and hand-holds clients in successfully implementing the same — so that HR becomes a driver of business results.",
+    highlights: [
+      "Linking people initiatives to business goals",
+      "Prioritising HR interventions for impact",
+      "Performance-driven culture",
+      "Implementation road map with clear ownership",
+    ],
+    approach: [
+      "Understand the business strategy and challenges",
+      "Identify the people levers that matter most",
+      "Agree a phased road map with leadership",
+      "Hand-hold implementation and review results",
+    ],
+    outcomes: [
+      "HR aligned with business objectives",
+      "Measurable improvement in people performance",
+      "Sustained business enhancement",
+    ],
   },
   {
-    slug: "digital-hr-strategy",
-    icon: "bi bi-cpu",
-    title: "Digital HR Strategy",
-    description:
-      "Modernizing HR technology, data, and automation to scale your people operations.",
+    slug: "leadership-advisory",
+    icon: "bi bi-compass",
+    title: "Leadership Advisory",
+    description: "Advising leadership on business enhancement through people performance initiatives.",
     detail:
-      "We audit your current HR tech stack, identify automation and analytics opportunities, and build a digital transformation roadmap that reduces administrative load while improving the employee experience.",
+      "With close to four decades of experience in HR leadership, KMAS acts as a trusted advisor to promoters, CEOs and senior leaders — offering a seasoned perspective on people decisions, organisation building and business enhancement.",
+    highlights: [
+      "Advice on critical people decisions",
+      "Organisation structure and roles",
+      "Leadership team effectiveness",
+      "A sounding board for the leadership",
+    ],
+    approach: [
+      "Engage closely with the leadership team",
+      "Bring an independent, experienced perspective",
+      "Recommend practical options",
+      "Support decisions through implementation",
+    ],
+    outcomes: [
+      "Better-informed people decisions",
+      "Stronger leadership alignment",
+      "An experienced advisor on call",
+    ],
   },
   {
-    slug: "workforce-planning",
-    icon: "bi bi-bar-chart-steps",
-    title: "Workforce Planning",
-    description:
-      "Forecasting headcount, skills, and cost scenarios so growth never outpaces your people plan.",
+    slug: "change-management",
+    icon: "bi bi-arrow-left-right",
+    title: "Change Management & Change Agents",
+    description: "Training, mentoring and coaching middle and senior management to become ‘Change Agents’.",
     detail:
-      "Using scenario modeling and skills-based forecasting, we help you plan headcount, budget, and capability needs 12–36 months ahead — so hiring and development decisions are proactive, not reactive.",
+      "Lasting change needs champions inside the organisation. KMAS trains, mentors and coaches the middle and senior management to become ‘Change Agents’ who lead and sustain the initiatives introduced.",
+    highlights: [
+      "Identifying potential change agents",
+      "Training, mentoring and coaching",
+      "Communicating and cascading change",
+      "Sustaining initiatives after implementation",
+    ],
+    approach: [
+      "Identify managers to lead change",
+      "Build their capability through training and coaching",
+      "Support them while they lead initiatives",
+      "Review progress and reinforce",
+    ],
+    outcomes: [
+      "Internal champions for change",
+      "Initiatives that sustain",
+      "Stronger middle and senior management",
+    ],
   },
   {
-    slug: "succession-planning",
+    slug: "talent-succession-planning",
+    icon: "bi bi-diagram-3",
+    title: "Talent & Succession Planning",
+    description: "Identifying and nurturing internal talent to carry forward the initiatives.",
+    detail:
+      "Most importantly, KMAS identifies and nurtures internal talents to carry forward the initiatives introduced and implemented — building a pipeline of capable people ready to take up larger roles.",
+    highlights: [
+      "Identifying high-potential employees",
+      "Development plans for future roles",
+      "Coaching & mentoring for senior positions",
+      "Succession for critical roles",
+    ],
+    approach: [
+      "Identify critical roles and potential successors",
+      "Assess readiness and development needs",
+      "Implement development plans",
+      "Review the talent pipeline periodically",
+    ],
+    outcomes: [
+      "A ready pipeline of internal talent",
+      "Continuity in critical roles",
+      "Motivated, growing employees",
+    ],
+  },
+  {
+    slug: "organisation-culture-building",
+    icon: "bi bi-building",
+    title: "Organisation Culture Building",
+    description: "Building a culture with ethos and continuous learning across the organisation.",
+    detail:
+      "KMAS works with leadership to build culture with ethos and continuous learning — rewarding and recognising the fast trackers and change agents, bridging the gap for those who struggle, and bringing about pride in working for the growth of the organisation.",
+    highlights: [
+      "Vision, mission and values",
+      "Recognition of fast trackers and change agents",
+      "Transparent learning and performance evaluation",
+      "Pride and belonging",
+    ],
+    approach: [
+      "Define the desired culture with leadership",
+      "Cascade it through engagement initiatives",
+      "Align recognition and evaluation",
+      "Measure and reinforce",
+    ],
+    outcomes: [
+      "A shared sense of purpose",
+      "A culture of continuous learning",
+      "Employees proud to be part of the organisation",
+    ],
+  },
+  {
+    slug: "hr-transformation-roadmap",
     icon: "bi bi-signpost-split",
-    title: "Succession Planning",
-    description:
-      "Protecting continuity in your most critical roles with structured succession pipelines.",
+    title: "HR Transformation Road Map",
+    description: "Diagnosing current HR practices and building a phased plan to transform them.",
     detail:
-      "We identify critical and at-risk roles, assess readiness of internal successors, and build development plans and governance processes that reduce succession risk across the leadership team.",
-  },
-  {
-    slug: "organization-development",
-    icon: "bi bi-diagram-2",
-    title: "Organization Development",
-    description:
-      "Redesigning structures, roles, and ways of working to support the strategy you're executing.",
-    detail:
-      "From org design and span-of-control analysis to culture and change management, we help you restructure the organization so structure, process, and people are aligned to strategic priorities.",
+      "Starting with a diagnostic study, KMAS builds a phased road map to transform HR practices — from compliance and core HR operations to development and culture — and hand-holds the organisation through each phase.",
+    highlights: [
+      "Diagnostic study of current HR",
+      "Phased transformation plan",
+      "Quick wins and long-term priorities",
+      "Periodical audits on implementation",
+    ],
+    approach: [
+      "Diagnose current practices",
+      "Agree priorities and phases",
+      "Implement with hand-holding",
+      "Audit progress periodically",
+    ],
+    outcomes: [
+      "A clear path for HR improvement",
+      "Steady, measurable progress",
+      "HR that supports growth",
+    ],
   },
 ];

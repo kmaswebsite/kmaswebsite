@@ -5,33 +5,33 @@ export type Faq = {
 
 export const faqs: Faq[] = [
   {
-    question: "What size organizations do you typically work with?",
+    question: "What does KMAS do?",
     answer:
-      "We work with mid-market and enterprise organizations, typically 200 to 20,000+ employees, across industries from manufacturing to financial services.",
+      "KMAS is a consultancy firm offering strategic and operational advice & suggestions on result-oriented business development through people performance initiatives, and hand-holding clients in successfully implementing the same.",
   },
   {
-    question: "Do you offer standalone training without a full consulting engagement?",
+    question: "Which industries does KMAS work with?",
     answer:
-      "Yes. Our training programs and certification courses can be booked independently of any strategy or consulting engagement, either as public cohorts or in-house sessions.",
+      "KMAS has served many sectors, including manufacturing, processing, auto and auto ancillary, FMCG, food, retail, electrical components, micro finance, ITES and chemicals.",
   },
   {
-    question: "How long does a typical HR strategy engagement take?",
+    question: "Where is KMAS based?",
     answer:
-      "Most strategy engagements run 8 to 16 weeks depending on scope, from diagnostic through roadmap delivery, with implementation support available afterward.",
+      "KMAS is based in Coimbatore, Tamil Nadu. Please use the contact page to discuss your requirement and location.",
   },
   {
-    question: "Can training programs be customized to our industry?",
+    question: "Can KMAS handle our HR on an ongoing basis?",
     answer:
-      "Every program is adapted to your industry context, terminology, and compliance requirements before delivery — we don't run generic, off-the-shelf sessions.",
+      "Yes. Beyond one-time assignments, KMAS can take care of core HR areas — from hiring and appointment orders to compliance, settlements and performance management — and hand-hold your team through implementation.",
   },
   {
-    question: "Do you support organizations outside the countries you're headquartered in?",
+    question: "What is an HR audit and why do we need one?",
     answer:
-      "Yes, we deliver engagements globally, both virtually and on-site, with compliance guidance localized to the relevant jurisdiction.",
+      "An HR audit is a diagnostic study of your HR practices and compliance. KMAS can conduct it before taking up an assignment and periodically afterwards, acting as a third eye to help you enforce best practices with ease.",
   },
   {
-    question: "What does a typical training certificate include?",
+    question: "Are training programs customised?",
     answer:
-      "Certificates include the program name, completion date, duration, and a unique certificate reference, suitable for internal HR records and professional development portfolios.",
+      "Yes. KMAS customises soft-skills, competency and leadership programs to your organisation’s needs, using proven tools with specialised interpretations.",
   },
 ];
