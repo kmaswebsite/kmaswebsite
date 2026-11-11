@@ -16,6 +16,8 @@ export const IMAGE_SLOTS: ImageSlot[] = [
   { path: "/images/banner-industry.jpg", label: "Industries / Solutions Banner", group: "Page Banners" },
   { path: "/images/about-team.jpg", label: "About Section Team Photo", group: "About & Stats" },
   { path: "/images/ramakrishnan-mohan.jpg", label: "Ramakrishnan Mohan — Leadership Photo", group: "Leadership" },
+  { path: "/images/karthik-viswanathan.jpg", label: "Karthik Viswanathan — Team Photo", group: "Leadership" },
+  { path: "/images/balasundaram.png", label: "V. Balasundaram — Team Photo", group: "Leadership" },
   { path: "/images/trainer-1.jpg", label: "Trainer Photo 1", group: "Training Programs" },
   { path: "/images/trainer-2.jpg", label: "Trainer Photo 2", group: "Training Programs" },
   { path: "/images/trainer-3.jpg", label: "Trainer Photo 3", group: "Training Programs" },

@@ -30,25 +30,6 @@ export type NavItem = {
   mega?: MegaMenu;
 };
 
-export const LEADERSHIP_MEGA_MENU: MegaMenu = {
-  columns: [
-    {
-      heading: "Leadership",
-      links: [
-        { label: "Ramakrishnan Mohan", href: "/leadership", icon: "bi bi-person-badge", description: "Director & Managing Partner" },
-      ],
-    },
-  ],
-  promo: {
-    icon: "bi bi-award",
-    badge: "Chairman",
-    title: "Indian Society for Training & Development",
-    description: "Ramakrishnan Mohan currently serves as Chairman, Coimbatore chapter.",
-    ctaLabel: "View Full Profile",
-    ctaHref: "/leadership",
-  },
-};
-
 export const MORE_MEGA_MENU: MegaMenu = {
   columns: [
     {
@@ -84,7 +65,7 @@ export const MORE_MEGA_MENU: MegaMenu = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-hrd" },
-  { label: "Leadership", mega: LEADERSHIP_MEGA_MENU },
+  { label: "Leadership", href: "/leadership" },
   { label: "Services", href: "/services" },
   { label: "More", mega: MORE_MEGA_MENU },
 ];

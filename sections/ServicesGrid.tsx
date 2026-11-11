@@ -39,9 +39,9 @@ export default function ServicesGrid({ limit, showHeader = true, ctaHref, ctaLab
           ))}
         </div>
         {ctaHref && (
-          <div className="text-center mt-5">
+          <div className="text-center mt-4">
             <Link href={ctaHref} className="btn-secondary-custom">
-              {ctaLabel} <i className="bi bi-arrow-right ms-1" />
+              {ctaLabel} <i className="bi bi-arrow-right" />
             </Link>
           </div>
         )}

@@ -3,6 +3,7 @@
 @import "../styles/variables.css";
 @import "../styles/common.css";
 @import "../styles/responsive.css";
+@import "../styles/theme.css";
 
 html {
   overflow-x: hidden;

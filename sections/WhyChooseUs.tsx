@@ -1,27 +1,31 @@
-import { toneFor } from "@/lib/utils";
 import { kmasWhyChoose } from "@/lib/content/kmas";
 
 export default function WhyChooseUs() {
   return (
-    <section className="section">
-      <div className="container-custom">
-        <div className="row gy-5">
+    <section className="section why-dark">
+      <div className="container-custom position-relative">
+        <div className="row gy-4 gx-lg-5">
           <div className="col-lg-4">
-            <span className="eyebrow d-block">Why Choose KMAS</span>
-            <h2 className="section-title">Building culture with ethos and continuous learning</h2>
+            <div className="why-dark-head">
+              <span className="eyebrow-inverted d-block">Why Choose KMAS</span>
+              <h2 className="section-title mb-0">Building culture with ethos and continuous learning</h2>
+            </div>
           </div>
 
           <div className="col-lg-8">
-            <div className="row stagger-fade">
+            <div className="row gx-4 gy-0 stagger-fade">
               {kmasWhyChoose.map((reason, index) => (
-                <div className="col-md-6 numbered-row" key={reason.title}>
-                  <div className={`icon-badge icon-badge-${toneFor(index)} mb-0`} style={{ width: 44, height: 44, fontSize: "1.15rem" }}>
-                    <i className={reason.icon} aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="h6 mb-2">{reason.title}</h3>
-                    <p className="text-light-custom small mb-0">{reason.description}</p>
-                  </div>
+                <div className="col-sm-6" key={reason.title}>
+                  <article className="why-item">
+                    <div className="why-item-top">
+                      <span className="why-item-number" aria-hidden="true">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <i className={`${reason.icon} why-item-icon`} aria-hidden="true" />
+                    </div>
+                    <h3 className="why-item-title">{reason.title}</h3>
+                    <p className="why-item-text">{reason.description}</p>
+                  </article>
                 </div>
               ))}
             </div>

@@ -263,7 +263,7 @@ a:hover {
   border-radius: var(--radius-card);
   padding: 1.5rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   height: 100%;
 }
 
@@ -1209,7 +1209,7 @@ main {
 .section-curve svg {
   display: block;
   width: 100%;
-  height: 56px;
+  height: 32px;
 }
 
 .section-curve-flip svg {
@@ -1457,4 +1457,183 @@ main {
   .scroll-top-btn {
     bottom: 5.25rem;
   }
+}
+
+/* ---------- Vision & Mission panel ---------- */
+.vm-panel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0b3c91 0%, #123f9e 45%, #1e5eff 100%);
+  color: #fff;
+  box-shadow: 0 24px 48px rgba(11, 60, 145, 0.22);
+}
+
+.vm-panel-glow {
+  position: absolute;
+  inset: auto -10% -60% auto;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(117, 160, 61, 0.35) 0%, rgba(117, 160, 61, 0) 70%);
+  pointer-events: none;
+}
+
+.vm-item {
+  position: relative;
+  padding: 2.5rem 2.75rem;
+  overflow: hidden;
+}
+
+.vm-item + .vm-item {
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.vm-watermark {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1.75rem;
+  font-size: 9rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.vm-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.1rem;
+}
+
+.vm-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #75a03d;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.vm-label-text {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.vm-text {
+  position: relative;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 500;
+  color: #fff;
+}
+
+@media (max-width: 767.98px) {
+  .vm-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .vm-item {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .vm-item + .vm-item {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+}
+
+/* ---------- Why Choose tiles ---------- */
+.why-tile {
+  --tile-color: #1e5eff;
+  --tile-soft: rgba(30, 94, 255, 0.1);
+  position: relative;
+  height: 100%;
+  padding: 1.6rem 1.5rem 1.5rem;
+  border-radius: 18px;
+  background: var(--color-section-bg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.why-tile-green {
+  --tile-color: #75a03d;
+  --tile-soft: rgba(117, 160, 61, 0.14);
+}
+
+.why-tile::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 0;
+  background: var(--tile-color);
+  transition: width 0.35s ease;
+}
+
+.why-tile:hover {
+  background: #fff;
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: var(--shadow-hover);
+}
+
+.why-tile:hover::after {
+  width: 100%;
+}
+
+.why-tile-number {
+  position: absolute;
+  top: 0.9rem;
+  right: 1.2rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--tile-soft);
+  -webkit-text-stroke-color: color-mix(in srgb, var(--tile-color) 30%, transparent);
+}
+
+.why-tile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--tile-soft);
+  color: var(--tile-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.1rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.why-tile:hover .why-tile-icon {
+  background: var(--tile-color);
+  color: #fff;
+}
+
+.why-tile-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.why-tile-text {
+  color: var(--color-text-light);
+  font-size: 0.93rem;
+  line-height: 1.6;
+  margin: 0;
 }

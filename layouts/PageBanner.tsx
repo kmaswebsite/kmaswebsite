@@ -29,15 +29,16 @@ export default function PageBanner({
   });
 
   return (
-    <div className="page-banner-image">
-      <SiteImage path={image} alt="" className="page-banner-image-photo" />
-      <div className={`page-banner-overlay page-banner-tone-${tone}`} aria-hidden="true" />
-      <div className="page-banner-pattern" aria-hidden="true" />
-      <i className={`page-banner-icon ${icon}`} aria-hidden="true" />
-      <div className="container-custom position-relative">
-        {text.eyebrow && <span className="eyebrow-inverted d-block">{text.eyebrow}</span>}
-        <h1 className="page-banner-title">{text.title}</h1>
-        {text.subtitle && <p className="page-banner-subtitle">{text.subtitle}</p>}
+    <div className="page-banner-shell container-custom">
+      <div className="page-banner-image">
+        <SiteImage path={image} alt="" className="page-banner-image-photo" />
+        <div className={`page-banner-overlay page-banner-tone-${tone}`} aria-hidden="true" />
+        <i className={`page-banner-icon ${icon}`} aria-hidden="true" />
+        <div className="container-custom position-relative">
+          {text.eyebrow && <span className="eyebrow-inverted d-block">{text.eyebrow}</span>}
+          <h1 className="page-banner-title">{text.title}</h1>
+          {text.subtitle && <p className="page-banner-subtitle">{text.subtitle}</p>}
+        </div>
       </div>
     </div>
   );

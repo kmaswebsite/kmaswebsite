@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import SiteImage from "@/components/ui/SiteImage";
-import { kmasAbout, kmasLeader, kmasMission } from "@/lib/content/kmas";
+import { kmasAbout, kmasHrExcellence, kmasLeader } from "@/lib/content/kmas";
 
 type Slide = {
   image: string;
@@ -21,9 +21,9 @@ const slides: Slide[] = [
   {
     image: "/images/hero-1.jpg",
     tone: "primary",
-    eyebrow: "Krishna's Management Advisory & Services",
+    eyebrow: "Krishna's Management Advisory & Services (KMAS)",
     title: "HR Management, HR Development & Management Advisory",
-    subtitle: kmasAbout.aboutParagraph,
+    subtitle: kmasAbout.description,
     primaryLabel: "About Us",
     primaryHref: "/about-hrd",
     secondaryLabel: "Our Services",
@@ -43,13 +43,13 @@ const slides: Slide[] = [
   {
     image: "/images/hero-3.jpg",
     tone: "success",
-    eyebrow: "Our Mission",
+    eyebrow: "Our Team",
     title: "Best-in-Class Consulting & Advisory",
-    subtitle: `“${kmasMission}”`,
-    primaryLabel: "Contact Us",
-    primaryHref: "/contact",
-    secondaryLabel: "About Us",
-    secondaryHref: "/about-hrd",
+    subtitle: kmasHrExcellence.paragraph3,
+    primaryLabel: "Meet the Team",
+    primaryHref: "/leadership",
+    secondaryLabel: "Contact Us",
+    secondaryHref: "/contact",
   },
 ];
 
@@ -83,19 +83,6 @@ export default function KmasHero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="hero-slider-indicators">
-        {slides.map((slide, index) => (
-          <button
-            key={slide.image}
-            type="button"
-            className={index === active ? "active" : ""}
-            aria-current={index === active ? "true" : undefined}
-            aria-label={slide.eyebrow}
-            onClick={() => goTo(index)}
-          />
-        ))}
-      </div>
-
       <div className="hero-slider-viewport">
         {slides.map((slide, index) => (
           <div
@@ -107,7 +94,7 @@ export default function KmasHero() {
             <div className={`hero-slide-overlay page-banner-tone-${slide.tone}`} aria-hidden="true" />
             <div className="container-custom position-relative hero-slide-inner">
               <div className="row">
-                <div className="col-lg-8">
+                <div className="col-lg-8 col-xl-7">
                   <span className="eyebrow-inverted d-block">{slide.eyebrow}</span>
                   <h1 className="hero-slide-title">{slide.title}</h1>
                   <p className="hero-slide-subtitle">{slide.subtitle}</p>
@@ -126,14 +113,37 @@ export default function KmasHero() {
         ))}
       </div>
 
-      <button type="button" className="hero-slider-control hero-slider-control-prev" onClick={() => goTo(active - 1)}>
-        <i className="bi bi-chevron-left" aria-hidden="true" />
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button type="button" className="hero-slider-control hero-slider-control-next" onClick={() => goTo(active + 1)}>
-        <i className="bi bi-chevron-right" aria-hidden="true" />
-        <span className="visually-hidden">Next</span>
-      </button>
+      <div className="hero-bar">
+        <div className="container-custom hero-bar-inner">
+          <div className="hero-counter" aria-hidden="true">
+            <strong>{String(active + 1).padStart(2, "0")}</strong> / {String(slides.length).padStart(2, "0")}
+          </div>
+          <div className="hero-progress" style={{ ["--hero-duration" as string]: `${AUTO_ADVANCE_MS}ms` }}>
+            {slides.map((slide, index) => (
+              <button
+                key={`${slide.image}-${index === active ? active : "idle"}`}
+                type="button"
+                className={`${index === active ? "active" : ""} ${index < active ? "is-done" : ""} ${paused ? "is-paused" : ""}`}
+                aria-current={index === active ? "true" : undefined}
+                aria-label={slide.eyebrow}
+                onClick={() => goTo(index)}
+              >
+                <span className="hero-progress-fill" />
+              </button>
+            ))}
+          </div>
+          <div className="hero-arrows">
+            <button type="button" className="hero-arrow" onClick={() => goTo(active - 1)}>
+              <i className="bi bi-arrow-left" aria-hidden="true" />
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button type="button" className="hero-arrow" onClick={() => goTo(active + 1)}>
+              <i className="bi bi-arrow-right" aria-hidden="true" />
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

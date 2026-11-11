@@ -37,11 +37,11 @@
   --max-width: 1320px;
 
   /* Spacing */
-  --space-section: 4.5rem;
-  --space-section-sm: 2.75rem;
-  --space-section-tight: 2.25rem;
+  --space-section: 2.75rem;
+  --space-section-sm: 1.75rem;
+  --space-section-tight: 1.5rem;
 
   /* Banner heights: page banners are derived from the home slider height */
   --banner-height: clamp(420px, 46vw, 560px);
-  --page-banner-height: clamp(240px, 26vw, 320px);
+  --page-banner-height: clamp(200px, 20vw, 260px);
 }

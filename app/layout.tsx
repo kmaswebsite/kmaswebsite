@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import BootstrapClient from "@/components/ui/BootstrapClient";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -40,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable} data-scroll-behavior="smooth">
+    <html lang="en" className={`${inter.variable} ${jakarta.variable}`} data-scroll-behavior="smooth">
       <body>
         {children}
         <BootstrapClient />

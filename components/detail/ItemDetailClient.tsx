@@ -45,10 +45,11 @@ export default function ItemDetailClient({
       <section className="section">
         <div className="container-custom">
           <div className="row justify-content-center">
-            <div className="col-lg-8">
+            <div className="col-lg-9">
+              <div className="detail-card fade-up">
               {item.underConstruction ? (
                 <div className="text-center">
-                  <div className="icon-badge mb-3">
+                  <div className="icon-tile mb-3">
                     <i className="bi bi-cone-striped" aria-hidden="true" />
                   </div>
                   <h2 className="h4 mb-2">Page Under Construction</h2>
@@ -61,7 +62,7 @@ export default function ItemDetailClient({
                 </div>
               ) : (
                 <>
-                  <div className="icon-badge mb-3">
+                  <div className="icon-tile mb-3">
                     <i className={item.icon} aria-hidden="true" />
                   </div>
                   <p className="text-light-custom fs-5">{item.detail}</p>
@@ -70,6 +71,7 @@ export default function ItemDetailClient({
                   </Link>
                 </>
               )}
+              </div>
             </div>
           </div>
         </div>

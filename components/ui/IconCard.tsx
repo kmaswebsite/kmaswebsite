@@ -18,28 +18,29 @@ export default function IconCard({
   href,
   ctaLabel = "Read More",
   tone = "primary",
-  number,
 }: IconCardProps) {
-  return (
-    <div className={`card-custom hover-lift icon-card tone-${tone} d-flex flex-column`}>
-      {typeof number === "number" && (
-        <div className="icon-card-ribbon" aria-hidden="true">
-          <span className="icon-card-ribbon-number">{String(number).padStart(2, "0")}</span>
-        </div>
-      )}
-      <div className="d-flex align-items-center gap-2 icon-card-head">
-        <div className={`icon-badge icon-badge-${tone} mb-0 ms-0`}>
-          <i className={icon} aria-hidden="true" />
-        </div>
-        <h3 className="h5 mb-0">{title}</h3>
-      </div>
-      <div className="icon-card-underline ms-0" aria-hidden="true" />
-      <p className="text-light-custom mb-2">{description}</p>
+  const body = (
+    <>
+      <span className={`icon-tile ${tone === "accent" ? "icon-tile-accent" : ""}`}>
+        <i className={icon} aria-hidden="true" />
+      </span>
+      <h3>{title}</h3>
+      <p>{description}</p>
       {href && (
-        <Link href={href} className="mt-auto icon-card-readmore">
-          {ctaLabel} <i className="bi bi-arrow-right ms-1" />
-        </Link>
+        <span className="service-card-link">
+          {ctaLabel} <i className="bi bi-arrow-right" aria-hidden="true" />
+        </span>
       )}
-    </div>
+    </>
   );
+
+  if (href) {
+    return (
+      <Link href={href} className="service-card text-reset text-decoration-none">
+        {body}
+      </Link>
+    );
+  }
+
+  return <div className="service-card">{body}</div>;
 }

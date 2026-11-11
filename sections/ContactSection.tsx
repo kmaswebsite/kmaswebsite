@@ -19,30 +19,23 @@ export default function ContactSection({ showHeader = true }: { showHeader?: boo
           </div>
           <div className="col-lg-5">
             <div className="card-custom h-100 d-flex flex-column gap-3">
-              <div>
-                <i className="bi bi-geo-alt text-accent me-2" />
-                {company.address}
+              <div className="contact-info-item">
+                <span className="icon-tile icon-tile-sm"><i className="bi bi-geo-alt" aria-hidden="true" /></span>
+                <span>{company.address}</span>
               </div>
-              <div>
-                <i className="bi bi-telephone text-accent me-2" />
-                {company.phone}
+              <div className="contact-info-item">
+                <span className="icon-tile icon-tile-sm icon-tile-accent"><i className="bi bi-telephone" aria-hidden="true" /></span>
+                <span>{company.phone}</span>
               </div>
-              <div>
-                <i className="bi bi-envelope text-accent me-2" />
-                {company.email}
+              <div className="contact-info-item">
+                <span className="icon-tile icon-tile-sm"><i className="bi bi-envelope" aria-hidden="true" /></span>
+                <span>{company.email}</span>
               </div>
-              <div>
-                <i className="bi bi-clock text-accent me-2" />
-                {company.hours}
+              <div className="contact-info-item">
+                <span className="icon-tile icon-tile-sm icon-tile-accent"><i className="bi bi-clock" aria-hidden="true" /></span>
+                <span>{company.hours}</span>
               </div>
-              <div
-                className="mt-2 position-relative overflow-hidden"
-                style={{
-                  height: 220,
-                  borderRadius: "var(--radius-sm)",
-                  border: "1px solid var(--color-border)",
-                }}
-              >
+              <div className="contact-map mt-1">
                 <iframe
                   title="Office location map"
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(company.address)}&z=15&output=embed`}
@@ -57,7 +50,7 @@ export default function ContactSection({ showHeader = true }: { showHeader?: boo
                 href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(company.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="small fw-semibold text-accent"
+                className="small fw-semibold"
               >
                 Get Directions <i className="bi bi-arrow-up-right ms-1" />
               </a>

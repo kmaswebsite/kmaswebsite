@@ -36,7 +36,7 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
   company: {
     name: "Krishna's Management Advisory & Services (KMAS)",
     shortName: "KMAS",
-    tagline: "To help customers achieve their business objectives by providing innovative, best-in-class consulting, solutions management advisory and services.",
+    tagline: "KMAS is a consultancy firm, offering strategic and operational advice & suggestions on result-oriented business development through people performance initiatives to its clients and hand-holding in successfully implementing the same.",
     phone: "+91 99401 99834",
     email: "admin@k-mas.com",
     address: "Sree Aishwaryam Apartments, 1A 3D, Ground Floor, Dr. Ambedkar Road, Bhuvaneshwari Nagar, Venkitapuram, Coimbatore - 641 025",
