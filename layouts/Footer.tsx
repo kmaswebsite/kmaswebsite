@@ -5,7 +5,7 @@ import { useSiteContent } from "@/lib/siteContent";
 
 const quickLinks = [
   { label: "About Us", href: "/about-hrd" },
-  { label: "Ramakrishnan Mohan", href: "/leadership" },
+  { label: "Leadership", href: "/leadership" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
 ];

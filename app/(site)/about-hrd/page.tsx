@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteImage from "@/components/ui/SiteImage";
 import IstdLogo from "@/components/ui/IstdLogo";
 import PageBanner from "@/layouts/PageBanner";
+import ContactCtaBand from "@/sections/ContactCtaBand";
 import { kmasAbout, kmasLeader } from "@/lib/content/kmas";
 
 export const metadata: Metadata = {
@@ -84,6 +85,8 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
+
+      <ContactCtaBand />
     </>
   );
 }

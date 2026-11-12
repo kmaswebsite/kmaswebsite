@@ -60,7 +60,7 @@ export default function CorporateLearningPage() {
             <div className="col-lg-6">
               <div className="about-media">
                 <div className="position-relative img-zoom" style={{ aspectRatio: "4 / 3" }}>
-                  <SiteImage path="/images/trainer-1.jpg" alt="KMAS corporate learning session" />
+                  <SiteImage path="/images/banner-training.jpg" alt="KMAS corporate learning session" />
                 </div>
               </div>
             </div>

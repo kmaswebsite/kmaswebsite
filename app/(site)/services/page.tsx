@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PageBanner from "@/layouts/PageBanner";
+import ContactCtaBand from "@/sections/ContactCtaBand";
 import ServicesGrid from "@/sections/ServicesGrid";
 import { kmasServicesIntro } from "@/lib/content/kmas";
 
@@ -27,6 +28,8 @@ export default function ServicesPage() {
         </div>
       </section>
       <ServicesGrid showHeader={false} />
+
+      <ContactCtaBand />
     </>
   );
 }

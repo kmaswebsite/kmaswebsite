@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-size: clamp(1.7rem, 2.8vw, 2.4rem);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
   font-weight: 800;
   line-height: 1.15;
   color: var(--color-ink);
@@ -389,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-slide-title {
   display: block;
   min-height: 0;
-  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.03em;
@@ -565,7 +565,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-banner-title {
   font-weight: 800;
-  font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   letter-spacing: -0.03em;
   line-height: 1.1;
 }
@@ -718,7 +718,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-band-title {
-  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
   font-weight: 800;
 }
 
@@ -758,7 +758,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .profile-name {
-  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
@@ -1072,7 +1072,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .why-item-number {
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -1334,4 +1334,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--color-text);
+}
+
+/* Give the CTA band breathing room after a tinted section */
+.section-bg-alt + .cta-band {
+  padding-top: var(--space-section);
 }

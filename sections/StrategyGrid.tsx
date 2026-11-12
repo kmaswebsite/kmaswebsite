@@ -27,7 +27,7 @@ export default function StrategyGrid({ limit, showHeader = true }: StrategyGridP
         )}
         <div className="row g-4 stagger-fade">
           {items.map((item, index) => (
-            <div className="col-md-6 col-lg-3" key={item.slug}>
+            <div className="col-md-6 col-lg-4" key={item.slug}>
               <IconCard
                 icon={item.icon}
                 title={item.title}
