@@ -117,13 +117,13 @@ export const trainerHighlights: TrainerHighlight[] = [
     expertise: "Training, mentoring and coaching middle and senior management; assessor and trainer up to leadership levels.",
   },
   {
-    name: "Karthik Viswanathan",
-    title: "Senior Consultant",
-    expertise: "Sales academies, LMS-based learning ecosystems, coaching leadership teams and capability building.",
-  },
-  {
     name: "Mr. V. Balasundaram",
     title: "Principal Consultant – Operations & Compliance",
     expertise: "Statutory compliance, industrial relations, discipline and HR policy implementation.",
+  },
+  {
+    name: "Karthik Viswanathan",
+    title: "Senior Consultant",
+    expertise: "Sales academies, LMS-based learning ecosystems, coaching leadership teams and capability building.",
   },
 ];

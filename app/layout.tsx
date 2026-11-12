@@ -45,7 +45,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`} data-scroll-behavior="smooth">
-      <body>
+      {/* Browser extensions (e.g. ColorZilla) add attributes to <body>; ignore those mismatches. */}
+      <body suppressHydrationWarning>
         {children}
         <BootstrapClient />
         <ScrollReveal />

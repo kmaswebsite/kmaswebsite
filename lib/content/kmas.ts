@@ -36,8 +36,20 @@ export type KmasTeamMember = {
 };
 
 // Team profiles below the Director. Order as requested by the client:
-// Senior Consultant first, Principal Consultant (Bala) last.
+// Principal Consultant (Bala) first, then Senior Consultant (Karthik).
 export const kmasTeam: KmasTeamMember[] = [
+  {
+    id: "balasundaram",
+    name: "Mr. V. Balasundaram",
+    title: "Principal Consultant – Operations & Compliance",
+    photo: "/images/balasundaram.png",
+    paragraphs: [
+      "A Proven HR professional with over 25+ years of diverse experience in Human Resource Management. He has held Leadership roles in reputed organizations such as Cameron, Elgi Rubber, and Super Sales India Private Limited, with expertise in HR strategy, Employee Relations, Performance management, Talent Development, Succession planning, HR policies, and organizational development.",
+      "He holds a Master of Social Work (MSW) from Sri Ramakrishna Mission Vidyalaya Arts & Science College, Coimbatore, affiliated with Bharathiar University.",
+      "Mr. Balasundaram currently serves as the Secretary of the Indian Society for Training & Development (ISTD), Coimbatore Chapter, a premier national professional body dedicated to Learning and Development. He is also a Regional Committee Member of the Dattopant Thengadi National Board for Workers' Education & Development (DTNBWED). Through KMAS he partners with organizations to build effective HR systems, Develop Leaders and foster high-performing workplaces.",
+      "As a Principal Consultant at KMAS, Mr. Balasundaram focuses on Operations, Statutory Compliance, and Industrial Relations, leveraging his extensive experience in HR leadership and organizational management. He partners with organizations to strengthen operational processes, ensure statutory and labour law compliance, streamline HR and administrative systems, manage employee relations and promote workplace discipline. He also advises organizations on policy implementation, compliance management and operational effectiveness, helping build sustainable, compliant and high performing workplaces.",
+    ],
+  },
   {
     id: "karthik-viswanathan",
     name: "Karthik Viswanathan",
@@ -49,18 +61,6 @@ export const kmasTeam: KmasTeamMember[] = [
       "Experienced in designing and implementing structured sales strategies, business development frameworks, SOPs, performance management systems, and capability-building initiatives. Strong track record in establishing sales academies, developing LMS-based learning ecosystems, coaching leadership teams, and building high-performance workforces aligned with organizational objectives.",
       "Recognized for connecting Business Strategy, Sales Performance, Data Intelligence, and People Development to deliver measurable business outcomes, sustainable growth, improved productivity, and enhanced customer experience.",
       "As a Senior Consultant, focused on partnering with organizations to identify business opportunities, address performance gaps, streamline processes, strengthen management capabilities, and drive sustainable business transformation through strategic thinking and execution excellence.",
-    ],
-  },
-  {
-    id: "balasundaram",
-    name: "Mr. V. Balasundaram",
-    title: "Principal Consultant – Operations & Compliance",
-    photo: "/images/balasundaram.png",
-    paragraphs: [
-      "A Proven HR professional with over 25+ years of diverse experience in Human Resource Management. He has held Leadership roles in reputed organizations such as Cameron, Elgi Rubber, and Super Sales India Private Limited, with expertise in HR strategy, Employee Relations, Performance management, Talent Development, Succession planning, HR policies, and organizational development.",
-      "He holds a Master of Social Work (MSW) from Sri Ramakrishna Mission Vidyalaya Arts & Science College, Coimbatore, affiliated with Bharathiar University.",
-      "Mr. Balasundaram currently serves as the Secretary of the Indian Society for Training & Development (ISTD), Coimbatore Chapter, a premier national professional body dedicated to Learning and Development. He is also a Regional Committee Member of the Dattopant Thengadi National Board for Workers' Education & Development (DTNBWED). Through KMAS he partners with organizations to build effective HR systems, Develop Leaders and foster high-performing workplaces.",
-      "As a Principal Consultant at KMAS, Mr. Balasundaram focuses on Operations, Statutory Compliance, and Industrial Relations, leveraging his extensive experience in HR leadership and organizational management. He partners with organizations to strengthen operational processes, ensure statutory and labour law compliance, streamline HR and administrative systems, manage employee relations and promote workplace discipline. He also advises organizations on policy implementation, compliance management and operational effectiveness, helping build sustainable, compliant and high performing workplaces.",
     ],
   },
 ];
