@@ -21,8 +21,8 @@ const slides: Slide[] = [
   {
     image: "/images/hero-1.jpg",
     tone: "primary",
-    eyebrow: "Krishna's Management Advisory & Services (KMAS)",
-    title: "HR Management, HR Development & Management Advisory",
+    eyebrow: "",
+    title: "Krishna's Management Advisory & Services (KMAS)",
     subtitle: kmasAbout.description,
     primaryLabel: "About Us",
     primaryHref: "/about-hrd",
@@ -95,7 +95,7 @@ export default function KmasHero() {
             <div className="container-custom position-relative hero-slide-inner">
               <div className="row">
                 <div className="col-lg-8 col-xl-7">
-                  <span className="eyebrow-inverted d-block">{slide.eyebrow}</span>
+                  {slide.eyebrow && <span className="eyebrow-inverted d-block">{slide.eyebrow}</span>}
                   <h1 className="hero-slide-title">{slide.title}</h1>
                   <p className="hero-slide-subtitle">{slide.subtitle}</p>
                   <div className="d-flex flex-wrap gap-3 hero-actions">
@@ -125,7 +125,7 @@ export default function KmasHero() {
                 type="button"
                 className={`${index === active ? "active" : ""} ${index < active ? "is-done" : ""} ${paused ? "is-paused" : ""}`}
                 aria-current={index === active ? "true" : undefined}
-                aria-label={slide.eyebrow}
+                aria-label={slide.eyebrow || slide.title}
                 onClick={() => goTo(index)}
               >
                 <span className="hero-progress-fill" />
